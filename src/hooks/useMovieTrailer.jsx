@@ -15,7 +15,6 @@ const useMovieTrailer = (movieId) => {
     const json = await data?.json();
     const videoData = json?.results?.filter((item) => item.type === "Trailer");
     const trailer = videoData.length ? videoData[0] : json?.results[0];
-    console.log(trailer);
     dispatch(addBackGroundMovie(trailer));
   };
   useEffect(() => {
